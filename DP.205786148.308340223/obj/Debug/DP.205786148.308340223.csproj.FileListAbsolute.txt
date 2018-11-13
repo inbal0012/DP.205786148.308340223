@@ -1,0 +1,13 @@
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\bin\Debug\DP.205786148.308340223.exe.config
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\bin\Debug\DP.205786148.308340223.exe
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\bin\Debug\DP.205786148.308340223.pdb
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\bin\Debug\Facebook.dll
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.csprojAssemblyReference.cache
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP._205786148._308340223.Form1.resources
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP._205786148._308340223.Properties.Resources.resources
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.csproj.GenerateResource.cache
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.csproj.CoreCompileInputs.cache
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.csproj.CopyComplete
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.exe
+C:\Users\Inbal Schkolnik\source\repos\DP.205786148.308340223\DP.205786148.308340223\obj\Debug\DP.205786148.308340223.pdb
