@@ -33,6 +33,7 @@ namespace DP._205786148._308340223
                 m_LoginResult = FacebookService.Connect(m_AppSettings.LastAccessToken);
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
                 fetchUserInfo();
+                loggedInUIChanges();
             }
         }
         
@@ -42,9 +43,16 @@ namespace DP._205786148._308340223
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            loginAndInit();
+            if (buttonLogin.Text == "Login")
+            {
+                loginAndInit();
+            }
+            else if (buttonLogin.Text == "Logout")
+            {
+                logOutUIChanged();
+            }
         }
-
+        
         private void loginAndInit()
         {
             m_LoginResult = FacebookService.Login("316225058978221",
@@ -74,25 +82,50 @@ namespace DP._205786148._308340223
             {
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
                 fetchUserInfo();
+                loggedInUIChanges();
             }
             else
             {
                 //MessageBox.Show(m_LoginResult.ErrorMessage);
             }
             
-            //todo buttonLogin.Text = "Logout";
         }
 
-        private void fetchUserInfo()    //TODO populateUIFromFacebookData
+        private void loggedInUIChanges ()
         {
             this.Text = string.Format("Logged in as " + m_LoggedInUser.FirstName + " " + m_LoggedInUser.LastName);
+            buttonLogin.Text = "Logout";
 
             foreach (Control controler in this.Controls)
             {
                 controler.Visible = true;
             }
+        }
 
+        private void logOutUIChanged()
+        {
+            m_AppSettings.RememberUser = false;
+            m_AppSettings.LastAccessToken = null;
+            this.checkBoxRememberUser.Checked = m_AppSettings.RememberUser;
+
+            foreach (Control controler in this.Controls)//hide controllers 
+            {
+                if (!controler.Equals(buttonLogin) && !controler.Equals(checkBoxRememberUser))
+                {
+                    controler.Visible = false;
+                }
+            }
+
+            FacebookService.Logout(() => { });
+
+            buttonLogin.Text = "Login";
+            this.Text = "Please Login";
+        }
+
+        private void fetchUserInfo()    //TODO populateUIFromFacebookData
+        {
             picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+
             if (m_LoggedInUser.Posts.Count > 0)
             {
                 //textBoxStatus.Text = m_LoggedInUser.Posts[0].Message;
@@ -185,6 +218,7 @@ namespace DP._205786148._308340223
             }
             else
             {
+                //TODO 
                 m_AppSettings = new AppSettings();
             }
 
