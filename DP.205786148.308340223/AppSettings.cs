@@ -16,7 +16,7 @@ namespace DP._205786148._308340223
         public bool RememberUser { get; set; }
         public string LastAccessToken { get; set; }
 
-        public AppSettings()
+        private AppSettings()
         {
             LastWindowLocation = new Point(20, 50);
             LastWindowSize = new Size(1000, 500);
@@ -26,6 +26,14 @@ namespace DP._205786148._308340223
 
         public void SaveToFile()
         {
+            if (!this.RememberUser)
+            {
+                LastWindowLocation = new Point(20, 50);
+                LastWindowSize = new Size(1000, 500);
+                RememberUser = false;
+                LastAccessToken = null;
+            }
+
             if (File.Exists(@"D:/appSettings.xml"))
             {
                 using (Stream stream = new FileStream(@"D:/appSettings.xml", FileMode.Truncate))
@@ -42,6 +50,7 @@ namespace DP._205786148._308340223
                     serializer.Serialize(stream, this);
                 }
             }
+
         }
 
         public static AppSettings LoadFromFile()
